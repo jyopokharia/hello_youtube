@@ -13,8 +13,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "set PORT=3001&&react-scripts start",
-    "build": "react-scripts build",
+    "start": "concurrently -k \"npm:tailwind:watch\" \"npm:react-start\"",
+    "react-start": "set PORT=3002&&react-scripts start",
+    "tailwind:watch": "npx @tailwindcss/cli -i ./src/index.css -o ./src/tailwind.generated.css --watch",
+    "tailwind:build": "npx @tailwindcss/cli -i ./src/index.css -o ./src/tailwind.generated.css --minify",
+    "build": "npm run tailwind:build && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
