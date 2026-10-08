@@ -1,9 +1,12 @@
 import "./App.css";
+import Body from "./components/body/Body";
+import Head from "./components/head/Head";
 
 function App() {
   return (
-    <div className="bg-amber-50">
-      <h1>Hello youtube</h1>
+    <div>
+      <Head />
+      <Body />
     </div>
   );
 }

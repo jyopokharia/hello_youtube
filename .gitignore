@@ -11,6 +11,7 @@
 # production
 /build
 /src/tailwind.generated.css
+/PROCESS.md
 
 # misc
 .DS_Store
